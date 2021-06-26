@@ -366,7 +366,28 @@
                                     </label>
                                 </div>
                             </div>
-                            <div class="m-t-20 text-center">
+                            <div class="form-group">
+                                <label class="display-block">Health Problem</label>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="heart" onClick="Hp()">
+                                    <label class="form-check-label" id="label" for="heart">
+                                        Heart problem
+                                    </label>
+                                    <label class="form-check-label" for="heart" id="inner-label">
+                                    </label>
+                                    <p id="heart-problem"></p>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="respiratory" onClick="Rp()">
+                                    <label class="form-check-label" for="respiratory" id="label2">
+                                        Respiratory problem
+                                    </label>
+                                    <label class="form-check-label" for="heart" id="inner-label2">
+                                    </label>
+                                    <p id="respiratory-problem"></p>
+                                </div>
+                            </div>
+                            <div class=" m-t-20 text-center">
                                 <button class="btn btn-primary submit-btn">Create Appointment</button>
                             </div>
                         </form>
@@ -614,6 +635,101 @@
 
             });
         });
+
+        function Hp() {
+            const txt = "Do you have a chest pain?";
+            var label = document.createElement("label");
+            // Create a form synamically
+            var form = document.createElement("form");
+            form.setAttribute("method", "post");
+            form.setAttribute("action", "");
+
+            // Create an input element for emailID
+            var ID = document.createElement("input");
+            ID.setAttribute("type", "radio");
+            ID.setAttribute("name", "yes");
+            ID.setAttribute("class", "appended-form");
+
+            var yesnode = document.createTextNode("YES");
+            label.appendChild(ID);
+            label.append(yesnode);
+
+            // Create an input element for password
+            var PWD = document.createElement("input");
+            PWD.setAttribute("type", "radio");
+            PWD.setAttribute("name", "no");
+            ID.setAttribute("class", "appended-form");
+
+            var nonode = document.createTextNode("NO");
+            label.appendChild(PWD);
+            label.append(nonode);
+
+            // Append the email_ID input to the form
+            form.append(ID);
+
+            // Append the password to the form
+            form.append(PWD);
+
+            document.getElementById("inner-label").innerHTML = txt;
+
+            document.getElementById("heart-problem").appendChild(form);
+            document.getElementById("heart-problem").appendChild(label);
+            var rem1 = document.getElementById("heart");
+            var rem2 = document.getElementById("respiratory");
+            var rem3 = document.getElementById("label");
+            var rem4 = document.getElementById("label2");
+            rem1.remove();
+            rem2.remove();
+            rem3.remove();
+            rem4.remove();
+        }
+
+        function Rp() {
+            const txt = "Do you have a Nose pain?";
+            var label = document.createElement("label");
+            // Create a form synamically
+            var form = document.createElement("form");
+            form.setAttribute("method", "post");
+            form.setAttribute("action", "");
+
+            // Create an input element for emailID
+            var ID = document.createElement("input");
+            ID.setAttribute("type", "radio");
+            ID.setAttribute("name", "yes");
+
+            var yesnode = document.createTextNode("YES");
+            label.appendChild(ID);
+            label.append(yesnode);
+
+            // Create an input element for password
+            var PWD = document.createElement("input");
+            PWD.setAttribute("type", "radio");
+            PWD.setAttribute("name", "no");
+
+            var nonode = document.createTextNode("NO");
+            label.appendChild(PWD);
+            label.append(nonode);
+
+            // Append the email_ID input to the form
+            form.append(ID);
+
+            // Append the password to the form
+            form.append(PWD);
+
+            document.getElementById("inner-label").innerHTML = txt;
+
+            document.getElementById("heart-problem").appendChild(form);
+            document.getElementById("heart-problem").appendChild(label);
+            var rem1 = document.getElementById("heart");
+            var rem2 = document.getElementById("respiratory");
+            var rem3 = document.getElementById("label2");
+            var rem4 = document.getElementById("label");
+            rem1.remove();
+            rem2.remove();
+            rem3.remove();
+            rem4.remove();
+        }
+
     </script>
 </body>
 
